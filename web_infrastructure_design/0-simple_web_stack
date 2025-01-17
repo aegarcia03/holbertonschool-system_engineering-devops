@@ -1,0 +1,14 @@
+Task 0:  Simple web stack
+Explanation:
+https://imgur.com/a/P1b6MyA
+- A server is the heart of the web infrastructure. Hosts the website. 
+- DNS is the human-readable address of the website (www.foobar.com) and it transaltes to the IP address.
+- DNS record type: CNAME (Canonical Name)
+- The web server NGNIX: Handles HTTP requests and routes these to the application server.
+- The application server: is like the brain behind the website. It handles all the logic and processing that happens behind the scenes.
+- The Database: where data is managed and stored
+- The servers communicates with the computer using network protocols(HTTP)
+Issues:
+1. SPOF
+2. Downtime during maintenance
+3. Cannot handle high traffic
