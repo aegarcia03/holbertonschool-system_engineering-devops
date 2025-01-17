@@ -1,0 +1,22 @@
+# Task 1: Distributed web infrastructure
+https://imgur.com/a/PPdo8xy
+
+- Three Servers: Adding three servers provides redundancy. If one server fails, the other two can keep the system running, making the infrastructure more resilient and minimizing downtime.
+
+- Round-Robin Algorithm: The load balancer distributes incoming requests evenly among the available servers by cycling through them one at a time in sequence. This ensures all servers share the traffic load equally.
+
+### Is Your Load Balancer Enabling an Active-Active or Active-Passive Setup? Explain the Difference Between Both
+- Active-Active Setup: Both servers work simultaneously to handle requests, sharing the traffic load to improve performance and availability.
+- Active-Passive Setup: Only the active server handles traffic, while the passive server remains on standby as a backup. The passive server is used only if the active server fails.
+### How a Database Primary-Replica (Master-Slave) Cluster Works and the Difference Between the Primary Node and the Replica Node Regarding the Application
+- Primary-Replica Cluster: This setup manages databases by having one main database (Primary) and one or more backup databases (Replicas).
+- Primary Database: The main database where all data changes (e.g., additions, updates, deletions) occur.
+- Replica Database: A backup database that makes exact copies of the primary database. It handles read-only tasks, while the primary focuses on data modification tasks.
+
+This division of responsibilities enhances performance because read requests are offloaded to replicas, leaving the primary to handle changes efficiently.
+
+## Isues: 
+
+- Single Point of Failure (SPOF): The load balancer or database primary node could become a SPOF if not set up redundantly.
+- Security Issues: Lack of a firewall and HTTPS leaves the system vulnerable to attacks.
+- No Monitoring: Without a monitoring system, identifying and resolving issues proactively is challenging.
