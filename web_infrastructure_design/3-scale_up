@@ -1,0 +1,6 @@
+Task: 3. Scale up
+https://imgur.com/8wvFZz4
+
+- Additional server: to ensure better scalability and fault tolereance.
+- 1 Load Balancer(HAProxy): Configured as a cluster with another load balancer to distribute traffic 
+evenly across the servers and provide redundancy 
