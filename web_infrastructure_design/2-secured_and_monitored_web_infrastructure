@@ -1,0 +1,40 @@
+Task 2: Secured and monitored web infrastructure
+https://imgur.com/a/muqwBPz
+
+Explanations for Added Elements
+- Firewalls: Protect each server by filtering incoming and outgoing network traffic based on predefined security rules. They also mitigate threats like DDoS attacks.
+- SSL: Encrypts traffic to ensure secure communication over HTTPS.
+- 3 Monitoring Clients: Help track performance, detect issues, and provide insights into server health.
+
+- What are firewalls for?
+Firewalls act as security barriers (like a security guard) to control traffic to and from servers. They reduce the risk of cyberattacks by blocking unauthorized access.
+
+- Why is the traffic served over HTTPS?
+HTTPS encrypts data between the user and the server, ensuring privacy and protecting sensitive information from interception.
+
+- What is monitoring used for?
+Monitoring provides visibility into system performance and helps detect potential risks, such as high traffic or slow response times.
+
+- How does the monitoring tool collect data?
+Monitoring clients installed on each server collect system metrics (e.g., CPU usage, RAM, disk utilization) and log application events. These metrics are sent to a central monitoring service for analysis.
+
+- How to monitor web server QPS (Queries Per Second)?
+QPS measures how many requests the server handles per second. To monitor it:
+
+Install a monitoring tool like Sumologic or Prometheus.
+Configure it to collect metrics from the web server (e.g., Nginx).
+Use the tool to display QPS in real-time or on a graph.
+
+Issues in the Infrastructure
+- Why is terminating SSL at the load balancer a potential issue?
+Terminating SSL at the load balancer means the traffic between the load balancer and backend servers is unencrypted. This can create a security vulnerability if the internal network is compromised.
+
+- Why is having only one MySQL server capable of accepting writes a problem?
+A single write-capable MySQL server creates:
+
+A bottleneck: Limits the system’s ability to handle high write traffic.
+A Single Point of Failure (SPOF): If the server goes down, all write operations fail.
+Why is having all components (database, web server, and application server) on each server a problem?
+
+- Inefficiency: Resources are duplicated unnecessarily, leading to wasted capacity.
+Scaling challenges: It becomes difficult to scale individual components (e.g., adding only database capacity).
